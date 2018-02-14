@@ -1,0 +1,29 @@
+* {
+  font-family: 'Spectral SC', serif;
+  color: black;
+}
+#search {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+#bag {
+  border: 1px solid black;
+  padding: 10px;
+  display: none;
+  position:relative;
+}
+
+#bag1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .5;
+  z-index: -1;
+}
+
+.img {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
