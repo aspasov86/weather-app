@@ -32,7 +32,7 @@ function showWeather(city) {
 
       var xml = new XMLHttpRequest();
 
-      xml.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=f3eb6ea849366509cc771b623c558f84");
+      xml.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=f3eb6ea849366509cc771b623c558f84");
 
       xml.send();
 
