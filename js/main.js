@@ -36,9 +36,11 @@ function showWeather(city) {
 
       xml.send();
 
-      xml.addEventListener("readystatechange", function() {
+      xml.addEventListener("readystatechange", function(e) {
         if (xml.readyState == 4 && xml.status == 200) {
           getData();
+        } else if (xml.status !== 200) {
+          error();
         }
       })
 
