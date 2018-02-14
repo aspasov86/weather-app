@@ -2,13 +2,16 @@ var search = document.getElementById("search");
 var input = document.querySelector("input[type='text']");
 var cube = document.getElementById("bag");
 var bcImage = document.querySelector("#bag1");
+var reject = document.querySelector("#reject");
 
 search.addEventListener("click", findCity);
 
 
 function findCity() {
   cube.style.display = "block";
-  addImg(bcImage, 'url("img/load.gif")');
+  resetCube();
+  reject.style.display = "none";
+  addImg(bcImage, 'url("img/load.gif")', "gif")
   var city = input.value;
   showWeather(city);
   input.value = "";
@@ -52,27 +55,45 @@ function showWeather(city) {
         weathDesc.innerHTML = data.weather[0].description;
         weather.innerHTML = data.weather[0].main;
         if (data.weather[0].main == "Clear") {
-          addImg(bcImage, 'url("img/clear.jpg")');
+          addImg(bcImage, 'url("img/clear.jpg")', "img");
         } else if (data.weather[0].main == "Clouds") {
-          addImg(bcImage, 'url("img/cloudy.jpg")');
+          addImg(bcImage, 'url("img/cloudy.jpg")', "img");
         } else if (data.weather[0].main == "Rain") {
-          addImg(bcImage, 'url("img/rain.jpg")');
+          addImg(bcImage, 'url("img/rain.jpg")', "img");
         } else if (data.weather[0].main == "Fog" || data.weather[0].main == "Mist") {
-          addImg(bcImage, 'url("img/fog.jpg")');
+          addImg(bcImage, 'url("img/fog.jpg")', "img");
         } else if (data.weather[0].main == "Drizzle") {
-          addImg(bcImage, 'url("img/drizzle.jpg")');
+          addImg(bcImage, 'url("img/drizzle.jpg")', "img");
         } else if (data.weather[0].main == "Snow") {
-          addImg(bcImage, 'url("img/snow.jpg")');
+          addImg(bcImage, 'url("img/snow.jpg")', "img");
         } else if (data.weather[0].main == "Thunderstorm") {
-          addImg(bcImage, 'url("img/thunderstorm.jpg")');
+          addImg(bcImage, 'url("img/thunderstorm.jpg")', "img");
         } else {
-          addImg(bcImage, 'none');
+          addImg(bcImage, 'none', "img");
         }
-      }
+    }
 }
 
-function addImg(element, url) {
+function addImg(element, url, cssClass) {
   element.style.backgroundImage = url;
-  element.classList.add("img");
+  element.className = cssClass;
+}
 
+function error() {
+  cube.style.display = "none";
+  reject.style.display = "block";
+}
+
+function resetCube() {
+  name1.innerHTML = "";
+  temp.innerHTML = "";
+  minTemp.innerHTML = "";
+  maxTemp.innerHTML = "";
+  hum.innerHTML = "";
+  press.innerHTML = "";
+  speed.innerHTML = "";
+  deg.innerHTML = "";
+  weathDesc.innerHTML = "";
+  weather.innerHTML = "";
+  addImg(bcImage, 'none', "img");
 }

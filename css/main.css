@@ -12,6 +12,16 @@
   display: none;
   position:relative;
 }
+#reject {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: red;
+  border: 1px solid red;
+  display: none;
+}
 
 #bag1 {
   position: absolute;
@@ -26,4 +36,14 @@
 .img {
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.gif {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.error {
+
 }
