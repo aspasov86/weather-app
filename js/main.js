@@ -62,7 +62,7 @@ function showWeather(city) {
           addImg(bcImage, 'url("img/cloudy.jpg")', "img");
         } else if (data.weather[0].main == "Rain") {
           addImg(bcImage, 'url("img/rain.jpg")', "img");
-        } else if (data.weather[0].main == "Fog" || data.weather[0].main == "Mist") {
+        } else if (data.weather[0].main == "Fog" || data.weather[0].main == "Mist" || data.weather[0].main == "Haze") {
           addImg(bcImage, 'url("img/fog.jpg")', "img");
         } else if (data.weather[0].main == "Drizzle") {
           addImg(bcImage, 'url("img/drizzle.jpg")', "img");
